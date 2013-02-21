@@ -21,7 +21,8 @@ DoneCounting	LEA R1, PTR1 ; LOAD THE ADDRESS OF THE STARTING ADDRESS
 			ADD R6, R6, R1
 			BRn backwards   ; if dest address > source address, start from the back
 normal		LDB R5,R1,#0	; Load the first charracter
-			ADD R5,R5,#-32  ; Convert to upper case by subtracting
+			ADD R5,R5,#-16  ; Convert to upper case by subtracting
+            ADD R5,R5,#-16
 			STB R5,R2,#0	; Store it at the address of the destination
 			ADD R1,R1,#1	; Increment to next source address
 			ADD R2,R2,#1	; Increment to next destination address
@@ -37,8 +38,8 @@ backwards	ADD R6,R3,#-1
 
 Changing	LDB R5,R1,#0	;Load the first charracter
 
-			ADD R5,R5,#-32	;Convert to upper case by subtracting
- 
+			ADD R5,R5,#-16	;Convert to upper case by subtracting
+            ADD R5,R5,#-16
 			STB R5,R2,#0	;Store it at the address of the destination
 
 			ADD R1,R1,#-1	; Decrement to next source address
